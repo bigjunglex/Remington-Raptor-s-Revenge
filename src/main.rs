@@ -16,8 +16,6 @@ impl GameState for State {
     fn tick(&mut self, ctx: &mut Rltk) {
         ctx.cls();
         player_input(self, ctx);
-
-        let map = self.ecs.fetch::<Vec<TileType>>();
         draw_map(&self.ecs, ctx);
 
         let positions = self.ecs.read_storage::<Position>();
